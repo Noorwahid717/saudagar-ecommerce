@@ -1,8 +1,14 @@
 import React from 'react';
+
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
-import './sign-in.styles.scss';
+import {
+  ButtonsBarContainer,
+  SignInContainer,
+  SignInTitle
+} from './sign-in.styles';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -37,8 +43,8 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className='sign-in'>
-        <h2>Saya sudah memiliki akun</h2>
+      <SignInContainer>
+        <SignInTitle>Saya sudah memiliki akun</SignInTitle>
         <span>Masuk dengan email dan password kamu</span>
 
         <form onSubmit={this.handleSubmit}>
@@ -58,14 +64,14 @@ class SignIn extends React.Component {
             label='Password'
             required
           />
-          <div className='buttons'>
+          <ButtonsBarContainer>
             <CustomButton type='submit'> Masuk </CustomButton>
             <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignIn>
               Masuk dengan Google
             </CustomButton>
-          </div>
+          </ButtonsBarContainer>
         </form>
-      </div>
+      </SignInContainer>
     );
   }
 }

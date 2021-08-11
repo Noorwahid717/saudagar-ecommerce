@@ -2,47 +2,52 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import CheckoutItem from '../checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
+import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { selectCartTotal } from '../../redux/cart/cart.selectors';
 
-import './checkout.styles.scss';
-
+import {
+    CheckoutHeaderContainer,
+    CheckoutPageContainer,
+    HeaderBlockContainer,
+    TotalContainer,
+    WarningContainer
+} from './checkout.styles';
 
 const CheckoutPage = ({ cartItems, total    }) => (
-    <div className='checkout-page'>
-        <div className='checkout-header'>
-            <div className='header-block'>
+    <CheckoutPageContainer>
+        <CheckoutHeaderContainer>
+            <HeaderBlockContainer>
                 <span>Produk</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Deskripsi</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Jumlah</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Harga</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Hapus</span>
-            </div>
-        </div>
+            </HeaderBlockContainer>
+        </CheckoutHeaderContainer>
         {cartItems.map(cartItem => (
             <CheckoutItem key={cartItem.id} cartItem={cartItem} />
         ))}
-        <div className='total'>
+        <TotalContainer>
             <span>Total Rp. {total}.000,-</span>
-        </div>
-        <div className='test-warning'>
+        </TotalContainer>
+        <WarningContainer>
             *Silahkan ikuti petunjuk penggunaan tes kartu kredit untuk pembayaran*
             <br />
             4242 4242 4242 4242 - Exp: 01/25 - CVV: 123
-        </div>
+        </WarningContainer>
         <StripeCheckoutButton price={total}/>
-    </div>
+    </CheckoutPageContainer>
 )
 
 const mapStateToProps = createStructuredSelector({

@@ -21,7 +21,6 @@ const StripeCheckoutButton = ({ price }) => {
             panelLabel='Bayar sekarang'
             token={onToken}
             stripeKey={publishableKey}
-            currency="Rp"
         />
     )
 }
