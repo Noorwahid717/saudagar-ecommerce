@@ -17,10 +17,8 @@ const StripeCheckoutButton = ({ price }) => {
         }).then(response => {
             alert('Pembayaran berhasil!')
         }).catch(error => {
-            console.log('Pembayaran error: ', JSON.parse(error));
-            alert(
-                'Terdapat kesalahan pada pembayaran anda. Silahkan untuk memastikan anda untuk menggunakan kartu kredit asal.'
-            )
+            console.log('Pembayaran error: ', error);
+            
         })
     }
     return (
