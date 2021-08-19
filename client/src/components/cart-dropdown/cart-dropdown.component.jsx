@@ -31,7 +31,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
                 dispatch(toggleCartHidden());
             }}
         >
-            Pergi Checkout
+            Bayar Sekarang
         </CartDropdownButton>
     </CartDropdownContainer>
 )
