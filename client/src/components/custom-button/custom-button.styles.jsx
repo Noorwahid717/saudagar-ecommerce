@@ -10,6 +10,10 @@ const buttonStyles = css`
     color: black;
     border: 1px solid black;
   }
+
+  @media screen and (max-width: 360px) {
+    font-size: 10px;
+  }
 `
 
 const invertedButtonStyles = css`
@@ -32,6 +36,10 @@ const  googleSignInStyles = css`
       background-color: #357ae8;
       border: none;
     }
+
+    @media screen and (max-width: 360px) {
+      font-size: 10px;
+  }
 `
 
 const getButtonStyles = props => {
@@ -56,6 +64,11 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
+  
+  @media screen and (max-width: 360px) {
+    width: 150px;
+    justify-content: space-evenly;
+  }
 
   ${getButtonStyles}
 `
