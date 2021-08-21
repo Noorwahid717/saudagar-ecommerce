@@ -5,7 +5,7 @@ export const SignUpContainer = styled.div`
   flex-direction: column;
   width: 380px;
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 390px) {
     width: 340px;
   }
 `;

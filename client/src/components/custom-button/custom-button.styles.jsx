@@ -11,7 +11,7 @@ const buttonStyles = css`
     border: 1px solid black;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 390px) {
     font-size: 10px;
   }
 `
@@ -37,7 +37,7 @@ const  googleSignInStyles = css`
       border: none;
     }
 
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 390px) {
       font-size: 10px;
   }
 `
@@ -65,7 +65,7 @@ export const CustomButtonContainer = styled.button`
   display: flex;
   justify-content: center;
   
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 390px) {
     width: 150px;
     justify-content: space-evenly;
   }
