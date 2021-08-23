@@ -9,7 +9,7 @@ import { checkUserSession } from './redux/user/user.actions';
 
 import Header from './components/header/header.component';
 import Spinner from './components/spinner/spinner.component';
-import ErrorBoundary from './components/error-boundary/error-boundariy.component';
+import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
 import { GlobalStyle } from './global.styles';
 
@@ -47,14 +47,14 @@ const App = ({ checkUserSession, currentUser }) => {
         </Switch>
       </div>
     );
-  }
+  };
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   checkUserSession: () => dispatch(checkUserSession())
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

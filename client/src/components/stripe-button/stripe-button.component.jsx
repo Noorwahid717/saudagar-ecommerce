@@ -19,15 +19,16 @@ const StripeCheckoutButton = ({ price }) => {
         }).catch(error => {
             console.log('Pembayaran error: ', error);
             
-        })
-    }
+        });
+    };
+
     return (
         <StripeCheckout
             label='Bayar sekarang'
             name='Saudagar ecommerce'
             billingAddress
             shippingAddress
-            image='https://svgshare.com/i/CUz.svg'
+            image='https://sendeyo.com/up/d/f3eb2117da'
             description={`Jumlah Total Pembayaran Rp. ${price}.000`}
             // amount={priceForStripe}
             panelLabel='Bayar sekarang'
